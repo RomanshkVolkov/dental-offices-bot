@@ -215,8 +215,8 @@ export default function LandingPage() {
 							viewport={{ once: true }}
 							className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
 						>
-							{features.map((feature, i) => (
-								<motion.div key={i} variants={item}>
+							{features.map((feature) => (
+								<motion.div key={feature.title} variants={item}>
 									<Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md">
 										<CardContent className="p-6 flex flex-col h-full">
 											<div className="size-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
@@ -287,7 +287,7 @@ export default function LandingPage() {
 								},
 							].map((step, i) => (
 								<motion.div
-									key={i}
+									key={step.title}
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
@@ -376,7 +376,7 @@ export default function LandingPage() {
 								},
 							].map((testimonial, i) => (
 								<motion.div
-									key={i}
+									key={`testimonial-${testimonial.quote.substring(0, 5)}`}
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
 									viewport={{ once: true }}
@@ -504,7 +504,7 @@ export default function LandingPage() {
 											},
 										].map((plan, i) => (
 											<motion.div
-												key={i}
+												key={plan.name}
 												initial={{ opacity: 0, y: 20 }}
 												whileInView={{ opacity: 1, y: 0 }}
 												viewport={{ once: true }}
@@ -532,8 +532,8 @@ export default function LandingPage() {
 															{plan.description}
 														</p>
 														<ul className="space-y-3 my-6 flex-grow">
-															{plan.features.map((feature, j) => (
-																<li key={j} className="flex items-center">
+															{plan.features.map((feature) => (
+																<li key={feature} className="flex items-center">
 																	<Check className="mr-2 size-4 text-primary" />
 																	<span>{feature}</span>
 																</li>

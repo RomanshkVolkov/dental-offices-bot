@@ -1,0 +1,84 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+	"vcs": {
+		"enabled": false,
+		"clientKind": "git",
+		"useIgnoreFile": false
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"a11y": {
+				"noAutofocus": "off",
+				"useButtonType": "off",
+				"useKeyWithClickEvents": "off"
+			},
+			"complexity": {
+				"noForEach": "off"
+			},
+			"correctness": {
+				"useExhaustiveDependencies": "off",
+				"noUnusedVariables": "warn",
+				"noUnusedImports": "warn"
+			},
+			"style": {
+				"noNegationElse": "warn",
+				"useFragmentSyntax": "off",
+				"noParameterAssign": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noUselessElse": "error",
+				"noNonNullAssertion": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noArrayIndexKey": "off",
+				"noConsole": "off",
+				"noEmptyBlockStatements": "error",
+				"useAwait": "error"
+			},
+			"nursery": {
+				"useUniqueElementIds": "off",
+				"noNestedComponentDefinitions": "off"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"enabled": true,
+			"semicolons": "asNeeded",
+			"indentStyle": "space",
+			"lineWidth": 120,
+			"lineEnding": "lf",
+			"bracketSpacing": true,
+			"quoteStyle": "single",
+			"jsxQuoteStyle": "double",
+			"arrowParentheses": "asNeeded",
+			"indentWidth": 2
+		}
+	},
+	"files": {
+		"includes": [
+			"**",
+			"!**/node_modules/**/*",
+			"!**/.next/**/*",
+			"!**/.git/**/*",
+			"!**/*.css",
+			"!**/*.json"
+		]
+	}
+}
